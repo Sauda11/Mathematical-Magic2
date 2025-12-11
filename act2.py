@@ -1,9 +1,10 @@
 def primeSeive(n):
     prime = [True for i in range(n + 1)]
+    print(prime)
     currentNumber = 2
     while (currentNumber * currentNumber <= n):
         if (prime[currentNumber] == True):
-            for i in range(currentNumber ** 2, n + 1, currentNumber):
+            for i in range(currentNumber ** 2, n + 1, currentNumber):  #finding the multiples of the prime numbers and marking them as composite (false)
                 prime[i] = False
         currentNumber += 1
     prime[0]= False
@@ -11,7 +12,7 @@ def primeSeive(n):
     for p in range(n + 1):
         if prime[p]:
             print(p)
-
+    print(prime)
 
 n = int(input("Enter number to find all prime numbers less than the number : "))
 primeSeive(n)
